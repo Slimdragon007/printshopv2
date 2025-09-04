@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Collection</title>
+    <link rel="stylesheet" href="styles.css?v=2" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container bar">
+        <a class="brand" href="/">Michael Haslim Photo</a>
+        <nav class="nav">
+          <a href="/collection">Collection</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a class="cart" href="/cart">Cart</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Collection</h1>
+      <div class="grid">
+        <article class="card">
+          <a href="/product-copper-sky">
+            <div class="thumb"><img alt="Copper Sky" src="/assets/copper-sky.svg" /></div>
+            <div class="body">
+              <p class="title">Copper Sky</p>
+              <p class="muted">Edition of 25</p>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="/product-moonlit-dunes">
+            <div class="thumb"><img alt="Moonlit Dunes" src="/assets/moonlit-dunes.svg" /></div>
+            <div class="body">
+              <p class="title">Moonlit Dunes</p>
+              <p class="muted">Edition of 25</p>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="/product-sedona-sky">
+            <div class="thumb"><img alt="Sedona Sky" src="/assets/sedona-sky.svg" /></div>
+            <div class="body">
+              <p class="title">Sedona Sky</p>
+              <p class="muted">Edition of 25</p>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="/product-desert-vista">
+            <div class="thumb"><img alt="Desert Vista" src="/assets/desert-vista.svg" /></div>
+            <div class="body">
+              <p class="title">Desert Vista</p>
+              <p class="muted">Edition of 25</p>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="/product-cinder-peaks">
+            <div class="thumb"><img alt="Cinder Peaks" src="/assets/cinder-peaks.svg" /></div>
+            <div class="body">
+              <p class="title">Cinder Peaks</p>
+              <p class="muted">Edition of 25</p>
+            </div>
+          </a>
+        </article>
+        <article class="card">
+          <a href="/product-twilight-mesa">
+            <div class="thumb"><img alt="Twilight Mesa" src="/assets/twilight-mesa.svg" /></div>
+            <div class="body">
+              <p class="title">Twilight Mesa</p>
+              <p class="muted">Edition of 25</p>
+            </div>
+          </a>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">© <span id="year"></span> Michael Haslim. All rights reserved.</div>
+    </footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>

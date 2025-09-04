@@ -1,0 +1,19 @@
+{
+  "name": "haslim-photo-site",
+  "version": "1.0.0",
+  "description": "Static HTML/CSS mockup for preview.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel",
+    "deploy:prod": "vercel --prod",
+    "deploy:auto": "bash scripts/deploy.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vercel": "^47.0.4"
+  }
+}

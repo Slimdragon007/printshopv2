@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Vercel local metadata
+.vercel/
+
+# OS / Editor
+.DS_Store
+*.log
+
+.vercel

@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css?v=2" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container bar">
+        <a class="brand" href="/">Michael Haslim Photo</a>
+        <nav class="nav">
+          <a href="/collection">Collection</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a class="cart" href="/cart">Cart</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Contact</h1>
+      <p class="muted">For commissions, orders, or general inquiries, email <a href="mailto:hello@example.com">hello@example.com</a>.</p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">© <span id="year"></span> Michael Haslim. All rights reserved.</div>
+    </footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+  </html>

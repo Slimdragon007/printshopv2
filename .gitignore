@@ -9,3 +9,9 @@ node_modules/
 *.log
 
 .vercel
+
+# Local dev
+.http-server.pid
+
+# Large/raw photo dumps (not used by site)
+public/etsy_photos/raw/

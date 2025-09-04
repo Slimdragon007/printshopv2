@@ -4,7 +4,8 @@
   "description": "Static HTML/CSS mockup for preview.",
   "main": "index.js",
   "scripts": {
-    "dev": "serve -l 3000",
+    "dev": "vercel dev",
+    "build": "node scripts/generate-grid.mjs",
     "deploy": "vercel",
     "deploy:prod": "vercel --prod",
     "deploy:auto": "bash scripts/deploy.sh",

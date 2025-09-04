@@ -2,6 +2,10 @@
 
 Static HTML/CSS mockup for preview.
 
+**Production**
+- `printshopv2` URL: https://printshopv2-4ul6u8jqu-michaels-projects-73b52599.vercel.app
+- `printshopv2` Vercel Project ID: prj_s4FdHQUgXJFZovxQPFhRUZJLShQh
+
 ## Usage
 
 - Install CLI locally: `npm install --save-dev vercel`

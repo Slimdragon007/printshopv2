@@ -16,17 +16,22 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install deps
+      - name: Install deps (printshopv2)
+        working-directory: printshopv2
         run: npm ci || npm i
 
-      - name: Pull Vercel Env
+      - name: Pull Vercel Env (printshopv2)
+        working-directory: printshopv2
         run: |
           npx vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
       
-      - name: Deploy to Vercel
+      - name: Deploy to Vercel (printshopv2)
+        working-directory: printshopv2
         run: |
           npx vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-

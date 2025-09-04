@@ -1,1 +1,11 @@
-body{font-family:sans-serif;background:#111;color:#eee;text-align:center;padding:40px;} h1{color:#fff;}
+body {
+  font-family: sans-serif;
+  background: #111;
+  color: #eee;
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  color: #fff;
+}

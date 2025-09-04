@@ -4,7 +4,7 @@
   "description": "Static HTML/CSS mockup for preview.",
   "main": "index.js",
   "scripts": {
-    "dev": "vercel dev",
+    "dev": "serve -l 3000",
     "deploy": "vercel",
     "deploy:prod": "vercel --prod",
     "deploy:auto": "bash scripts/deploy.sh",

@@ -42,8 +42,7 @@ else
 fi
 
 echo "[deploy] Deploying to Vercel (prod)..."
-# If not linked yet, this may prompt. You can pre-link with: vercel link
-vercel --prod
+# If not linked/logged-in, this may prompt. Pre-link with: vercel link
+vercel --prod --yes
 
 echo "[deploy] Done."
-

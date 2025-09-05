@@ -7,5 +7,9 @@
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
     }
+  ],
+  "rewrites": [
+    { "source": "/archive", "destination": "/404.html" },
+    { "source": "/archive/(.*)", "destination": "/404.html" }
   ]
 }

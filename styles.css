@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-body {
-  font-family: sans-serif;
-  background: #111;
-  color: #eee;
-  text-align: center;
-  padding: 40px;
-}
-
-h1 {
-  color: #fff;
-}
-=======
-import fs from 'fs';
-import path from 'path';
-=======
 /* ---- Base reset & tokens ---- */
 :root{
   --bg: #0f0f10;            /* page background */
@@ -35,7 +18,6 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-stac
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 button{font:inherit}
->>>>>>> 0b7eb96 (chore: commit generated grid markup and finalized styles; ignore raw photos)
 
 /* ---- Layout helpers ---- */
 .container{max-width:var(--container);margin-inline:auto;padding:24px}
@@ -56,23 +38,6 @@ button{font:inherit}
 .small{font-size:14px;color:var(--muted)}
 .mono{font-family:var(--mono)}
 
-<<<<<<< HEAD
-
-const html = files
-  .map((file) => {
-    const src = `/public/etsy_photos/${file}`;
-    return `<figure class="card">
-      <a href="${src}" target="_blank" rel="noopener noreferrer">
-        <img src="${src}" alt="${file}" loading="lazy" />
-      </a>
-      <figcaption>${file}</figcaption>
-    </figure>`;
-  })
-  .join('\n');
-
-console.log(html);
->>>>>>> 7fbf8fb (feat: homepage layout + gallery grid build\n\n- Add script to generate gallery grid from /public/etsy_photos\n- Update index.html structure and styles\n- Add Lighthouse CI to workflow\n- Add lighthouserc.json config\n- Ignore dev pid and raw photo dumps)
-=======
 /* ---- Surfaces ---- */
 .card{background:var(--surface);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
 .card.pad{padding:18px}
@@ -131,4 +96,3 @@ console.log(html);
   :root{ --bg:#f8f9fb; --surface:#ffffff; --text:#0f1115; --muted:#586174; --primary:#c88f2d; --primary-ink:#0b0b0c }
   .card{box-shadow:0 10px 30px rgba(0,0,0,.08)}
 }
->>>>>>> 0b7eb96 (chore: commit generated grid markup and finalized styles; ignore raw photos)

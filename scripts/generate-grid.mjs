@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { readdirSync, readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync, existsSync, mkdirSync, renameSync } from 'node:fs';
 import { join, extname } from 'node:path';
 
 const ROOT = process.cwd();
@@ -15,12 +15,51 @@ function ensureDirs() {
   if (!existsSync(PHOTOS_DIR)) mkdirSync(PHOTOS_DIR);
 }
 
+function sanitizeFilenames() {
+  if (!existsSync(PHOTOS_DIR)) return;
+  const entries = readdirSync(PHOTOS_DIR);
+  for (const file of entries) {
+    // skip hidden files and folders
+    if (file.startsWith('.')) continue;
+    const ext = extname(file);
+    const base = file.slice(0, -ext.length);
+    let next = file.trim();
+    // collapse duplicate space suffix like " 2" before extension
+    next = next.replace(/\s+2(\.[^.]+)$/i, '$1');
+    // no-op if unchanged
+    if (next === file) continue;
+    const from = join(PHOTOS_DIR, file);
+    const to = join(PHOTOS_DIR, next);
+    try {
+      // avoid overwriting existing files
+      if (existsSync(to)) {
+        // if the target exists, keep a "-2" suffix to avoid clobbering
+        const alt = next.replace(/(\.[^.]+)$/i, '-2$1');
+        const altPath = join(PHOTOS_DIR, alt);
+        if (!existsSync(altPath)) {
+          renameSync(from, altPath);
+        }
+      } else {
+        renameSync(from, to);
+      }
+    } catch (err) {
+      console.warn('[generate-grid] rename failed:', file, '->', next, err.message);
+    }
+  }
+}
+
 function getImages() {
   const allow = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif']);
   if (!existsSync(PHOTOS_DIR)) return [];
-  return readdirSync(PHOTOS_DIR)
+  const files = readdirSync(PHOTOS_DIR)
     .filter((f) => allow.has(extname(f).toLowerCase()))
+    // prefer original over duplicate "-2" files
+    .filter((f, _, arr) => {
+      const without2 = f.replace(/-2(\.[^.]+)$/i, '$1');
+      return !(f !== without2 && arr.includes(without2));
+    })
     .sort((a, b) => a.localeCompare(b));
+  return files;
 }
 
 function humanize(name) {
@@ -81,6 +120,7 @@ function injectGrid2(html, gridHtml) {
 
 function run() {
   ensureDirs();
+  sanitizeFilenames();
   const images = getImages();
   if (images.length === 0) {
     console.error('[generate-grid] No images found in /public/etsy_photos');
